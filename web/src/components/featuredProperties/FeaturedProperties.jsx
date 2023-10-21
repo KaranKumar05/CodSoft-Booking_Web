@@ -1,6 +1,10 @@
+import useFetch from "../../hooks/useFetch.mjs";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
+  const url = "/hotels/countByType";
+  const { data, loading, error } = useFetch(url);
+
   return (
     <div className="fp">
       <div className="fpItem">

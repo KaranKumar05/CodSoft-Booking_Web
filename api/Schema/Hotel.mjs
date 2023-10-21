@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
 
 //----- Hotel Schema -----//
 
-const HotelSchema = new Schema({
+const HotelSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -31,6 +30,10 @@ const HotelSchema = new Schema({
         type: String,
         required: true,
     },
+    title: {
+        type: String,
+        required: true,
+    },
     rating: {
         type: Number,
         min: 0,
@@ -45,7 +48,7 @@ const HotelSchema = new Schema({
     },
     features: {
         type: Boolean,
-        required: false,
+        default: false,
     },
 });
 
